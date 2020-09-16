@@ -14,4 +14,12 @@ def my_func():
     a.remove(min(a))
     print(a)
 
-my_func()
+def second_func(var_1, var_2, var_3):
+    a = []
+    a.append(var_1)
+    a.append(var_2)
+    a.append(var_3)
+    a.remove(min(a))
+    print(a)
+
+second_func(4, 8, 5)
