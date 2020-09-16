@@ -2,6 +2,7 @@ eng = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
 
 
 def int_func(var):
+    num = 0
     for el in list(var):
         a = eng.count(el)
         if a == 0:
@@ -11,7 +12,9 @@ def int_func(var):
             return "*non_latin_word*"
             break
         if a > 0:
-            return var.title()
+            num+=1
+    if num == len(list(var)):
+        return var.title()
 
 
 def second_func():
