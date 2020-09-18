@@ -1,13 +1,12 @@
 import itertools
+import math
 
-
-def recursive_fact(a):
-    if a == 0:
-        return 1
-    else:
-        return recursive_fact(a - 1) * a
-
-
+# def recursive_fact(a):
+#     if a == 0:
+#         return 1
+#     else:
+#         return recursive_fact(a - 1) * a
+#
 # def fact(n):
 #     a = []
 #     b = []
@@ -19,14 +18,15 @@ def recursive_fact(a):
 #         b.append(recursive_fact(el))
 #     print(a)
 #     print(b)
-#
-#
 # fact(4)
+
+# def fact(n):
+#     for el in range(1, (n + 1)):
+#         yield recursive_fact(el)
 
 def fact(n):
     for el in range(1, (n + 1)):
-        yield recursive_fact(el)
-
+        yield math.factorial(el)
 
 a = 1
 for el in fact(6):
