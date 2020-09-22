@@ -1,11 +1,13 @@
-from googletrans import Translator  # Установил с помощью pip install googletrans
-
-translator = Translator()
-# result = translator.translate('two', src='en', dest='ru')
-# print(result.text)
-new_words = open("HW_3_new.txt", "w", encoding="utf-8")
-with open("HW_3.txt", "r+", encoding="UTF-8") as words:
-    for line in words:
-        result = translator.translate((line.split())[0], src='en', dest='ru')
-        new_words.writelines(f"{result.text} — {(line.split())[2]}\n")
-new_words.close()
+with open("HW_3_Workers.txt", "r", encoding="UTF-8") as  workers:
+    print("Сотрудники, чей оклад ниже 20тыс рублей: ", end="")
+    for line in workers:
+        if float(line.split()[1]) >= 20000:
+            print(line.split()[0], end=" ")
+    sum = 0
+    num = 0
+    workers.seek(0)
+    for line in workers:
+        sum += float(line.split()[1])
+        num += 1
+    print("\nСредний доход всех сотрудников фирмы: ", end="")
+    print(f"{sum / num}p")
