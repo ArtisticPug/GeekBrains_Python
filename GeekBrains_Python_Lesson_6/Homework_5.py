@@ -1,3 +1,11 @@
+import ctypes
+
+kernel32 = ctypes.windll.kernel32  # Без этой части, которую с свзял из https://all-python.ru/osnovy/tsvetnoj-vyvod-teksta.html
+kernel32.SetConsoleMode(kernel32.GetStdHandle(-11), 7)  # В консоли не отображались цвета
+from os import system, name
+from time import sleep
+
+
 class Stationery:
     Title = "Default"
 
@@ -31,3 +39,5 @@ pencil.draw()
 
 handle = Handle()
 handle.draw()
+
+sleep(5)
