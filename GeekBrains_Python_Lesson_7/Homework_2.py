@@ -10,7 +10,7 @@ class Clothing(ABC):
         pass
 
     def __add__(self, other):
-        return round(self.use + other.use, 2)
+        return round((self.use) + other.use, 2)
 
     def __str__(self):
         return f"{self.use}"
