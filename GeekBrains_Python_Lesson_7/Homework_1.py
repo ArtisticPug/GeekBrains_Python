@@ -5,7 +5,8 @@ class Matrix:
     def __str__(self):
         a = f"{list(self.rows)}".replace("[[", "[")
         a = f"{a}".replace("]]", "]")
-        return f"{a}".replace("], [", "]\n[")
+        a = f"{a}".replace("], [", "]\n[")
+        return f"{a}".replace(", ", " ")
 
     def __add__(self, other):
         try:
